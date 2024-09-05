@@ -33,19 +33,8 @@ function App(props) {
         setAuthLoading(true);
         setError(null);
 
-        console.log('Auth data: ', authData);
-
-        setTimeout(() => {
-            setUserId('123213213123');
-            setIsAuth(true);
-            // setError('Invalid username or password.');
-            setAuthLoading(false);
-        }, 1000)
-
-        return;
-
         try {
-            const response = await fetch('http://localhost:8080/auth/login', {
+            const response = await fetch('https://viatouchmedia-test.apigee.net/loyalty/pf-landing/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -62,49 +51,16 @@ function App(props) {
             }
 
             const userData = await response.json();
-            console.log(userData);
             setIsAuth(true);
             setAuthLoading(false);
-            setUserId(userData.userId);
-            localStorage.setItem('userId', userData.userId);
+            setUserId(userData.username);
+            localStorage.setItem('vickiUserId', userData.username);
         } catch (err) {
             setIsAuth(false);
             setAuthLoading(false);
             setError(err.message);
         }
     };
-
-
-    let routes;
-
-    if (isAuth) {
-        routes = (
-            <Routes>
-                <Route
-                    path="/"
-                    element={<HomePage/>}
-                />
-                <Route path="*"
-                       element={<div>Not Found</div>}/>
-            </Routes>
-        );
-    } else {
-        routes = (
-            <Routes>
-                <Route
-                    path="/"
-                    element={<LoginPage
-                        {...props}
-                        onLogin={loginHandler}
-                        loading={authLoading}
-                        error={error}
-                    />}
-                />
-
-                <Route path="*" element={<div>Not Found</div>}/>
-            </Routes>
-        );
-    }
 
     return (
         <Fragment>
