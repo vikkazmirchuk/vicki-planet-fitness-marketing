@@ -1,0 +1,71 @@
+@import "src/styles/variables";
+
+.page-wrapper {
+  .home-banner {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    
+    .right-part {
+      flex: 1 0 50%;
+      display: flex;
+      flex-direction: column;
+      background-image: url(https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48018/bkg_1920x1080.269a8a749a0b.jpg?ext=webp), linear-gradient(270deg, rgb(140, 0, 220) 0%, rgba(65, 0, 125, 0.8) 100%);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 60px 30px 60px 60px;
+
+      .logo {
+        height: auto;
+        width: 250px;
+        margin-bottom: 30px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      .home-banner-title {
+        font-size: 54px;
+        font-weight: 700;
+        color: #ECD9FEFF;
+        line-height: 1em;
+        margin-bottom: 70px;
+      }
+      
+      .home-banner-link-button {
+        a {
+          color: #ffffff;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 1.5em;
+        }
+      }
+    }
+    
+    .left-part {
+      flex: 1 0 50%;
+    }
+  }
+  
+  .section-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: $default-text-color;
+    text-align: center;
+  }
+  
+  .whats-new-section {
+    padding: 40px;
+    
+    .whats-new-cards-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+  }
+}

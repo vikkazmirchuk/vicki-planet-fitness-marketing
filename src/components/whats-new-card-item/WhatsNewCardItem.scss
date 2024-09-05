@@ -1,0 +1,33 @@
+@import "src/styles/variables";
+
+.whats-new-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .card-image {
+    width: 100%;
+    height: 400px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .card-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 16px 0 18px;
+    color: $default-text-color;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .card-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: $default-text-color;
+    text-align: center;
+  }
+}
