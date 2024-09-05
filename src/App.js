@@ -47,7 +47,7 @@ function App(props) {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorData.message || 'Could not authenticate you!');
+                throw new Error(errorData.message || 'Invalid username or password!');
             }
 
             const userData = await response.json();
