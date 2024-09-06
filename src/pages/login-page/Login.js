@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './Login.scss';
+import viatouchLogo from "../../assets/img/viatouch-logo.png";
 
 function Login(props) {
     const [username, setUsername] = useState('');
@@ -8,6 +9,11 @@ function Login(props) {
 
     return (
         <div className={'login-page'}>
+            <div className={'login-page-header'}>
+                <div className={'logo'}>
+                    <img src={viatouchLogo} alt="Viatouch Logo"/>
+                </div>
+            </div>
             <div className={'login-form-wrapper'}>
                 <div className={'page-title'}>Login</div>
 

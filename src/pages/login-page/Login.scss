@@ -3,6 +3,26 @@
 .login-page {
   height: 100%;
   width: 100%;
+  
+  .login-page-header {
+    width: 100%;
+    overflow-y: hidden;
+    height: 57px;
+    background-color: $primary-color;
+    display: flex;
+
+    .logo {
+      height: 100%;
+      max-width: 200px;
+      flex-shrink: 0;
+      padding-bottom: 2px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
 
 .page-title {
